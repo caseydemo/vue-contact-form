@@ -1,7 +1,7 @@
 Vue.component( 'contactLine', {
-	template : '<li>{{ name }} {{ phoneNumber }}</li>',
+	template : '<li><button v-on:click="removeContact( id )">X</button> {{ name }} {{ phoneNumber }}</li>',
 
-	props : [ 'id', 'name', 'phoneNumber' ]
+	props : [ 'id', 'name', 'phoneNumber', 'removeContact' ]
 });
 
 
@@ -33,7 +33,9 @@ var contactList = new Vue( {
 	},
 
 	methods : {
-		addContact : addContact
+		addContact : addContact,
+		removeContact : removeContact,
+		findContact : findContact
 	}
 
 });
@@ -49,4 +51,17 @@ function addContact() {
 
 	this.newName = '';
 	this.newPhoneNumber = '';
+}
+
+function removeContact( id ) {
+	var contactIndex = this.findContact( id );
+	this.contacts.splice( contactIndex, 1 );
+}
+
+function findContact( id ) {
+	return this.contacts.findIndex( 
+		function( contact ) { 
+			return ( id === contact.id ); 
+		} 
+	);
 }

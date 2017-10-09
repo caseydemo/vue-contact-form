@@ -18,6 +18,7 @@ We need to make a contact list so we don't forget any of our contacts we met in 
 6. Another horizontal line
 7. List of contact info (name, phone number)
 8. Make it robust enough to handle addition of fields like email.
+9. Delete a contact
 
 ## Revisit
 

@@ -20,6 +20,9 @@
 		
 		<hr class="mt-1 mb-3 ml-5 mr-5" />
 
+
+
+		<!-- NAME -->
 		<div class="form-group row">
 		  <label for="example-text-input" class="col-2 col-form-label">Name</label>
 		  <div class="col-10">
@@ -31,6 +34,8 @@
 		  </div>
 		</div>
 
+
+		<!-- PHONE -->
 		<div class="form-group row">
 		  <label for="example-text-input" class="col-2 col-form-label">Phone</label>
 		  <div class="col-10">
@@ -40,6 +45,18 @@
 		           placeholder="Phone Number"
 		           v-model="newPhoneNumber" 
 		           v-on:blur="validatePhoneNumber">
+		  </div>
+		</div>
+
+		<!-- EMAIL -->
+		<div class="form-group row">
+		  <label for="example-text-input" class="col-2 col-form-label">Email</label>
+		  <div class="col-10">
+		    <input id="emailInput"
+		    			 class="form-control" 
+		           type="email" 
+		           placeholder="Email"
+		           v-model="newEmail" >
 		  </div>
 		</div>
 
@@ -54,6 +71,7 @@
 				is="contactLine"
 				v-bind:name="contact.name"
 				v-bind:phone-number="contact.phoneNumber"
+				v-bind:email="contact.email"
 				v-bind:id="contact.id"
 				v-bind:remove-contact="removeContact"
 				v-for="contact in contacts"	>				

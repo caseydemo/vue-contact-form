@@ -1,7 +1,7 @@
 Vue.component( 'contactLine', {
-	template : '<li><button v-on:click="removeContact( id )">X</button> {{ name }} {{ phoneNumber }}</li>',
+	template : '<li class="row"><td ><button v-on:click="removeContact( id )" >X</button></td> <td > {{ name }} </td> <td >{{ phoneNumber }}</td> <td >{{ email }}</td></li>',
 
-	props : [ 'id', 'name', 'phoneNumber', 'removeContact' ]
+	props : [ 'id', 'name', 'phoneNumber', 'email', 'removeContact' ]
 });
 
 
@@ -12,21 +12,25 @@ var contactList = new Vue( {
 	data : {
 		newName : '',
 		newPhoneNumber : '',
+		newEmail : '',
 		contacts : [
 			{
 				id : 1,
 				name : 'Albus Dumbledore',
-				phoneNumber : '859-123-4567'
+				phoneNumber : '859-123-4567',
+				email : 'bigdog@hotmail.com'
 			},
 			{
 				id : 2,
 				name : 'Minerva McGonagall',
-				phoneNumber : '606-234-9876'
+				phoneNumber : '606-234-9876',
+				email : 'bigdog@hotmail.com'
 			},
 			{
 				id : 3,
 				name : 'Severus Snape',
-				phoneNumber : '502-444-1010'
+				phoneNumber : '502-444-1010',
+				email : 'bigdog@hotmail.com'
 			},
 		],
 		nextContactId : 4
@@ -56,16 +60,19 @@ function addContact() {
 		return;
 	}
 	else {
+		
 		this.contacts.push(
 			{
 				id : this.nextContactId++,
 				name : this.newName,
-				phoneNumber : this.newPhoneNumber
+				phoneNumber : this.newPhoneNumber,
+				email : this.newEmail
 			}
 		);
 
 		this.newName = '';
 		this.newPhoneNumber = '';
+		this.newEmail = '';
 	}
 
 	

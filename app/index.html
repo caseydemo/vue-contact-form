@@ -36,19 +36,27 @@
 		  <div class="col-10">
 		    <input id="phoneNumberInput"
 		    			 class="form-control" 
-		           type="text" 
+		           type="tel" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}" 
 		           placeholder="Phone Number"
 		           v-model="newPhoneNumber" >
 		  </div>
 		</div>
 
 		<div class="form-group row">
-			<button type="submit" class="btn btn-outline-primary mx-auto">Save</button>
+			<button type="submit" class="btn btn-outline-primary mx-auto" v-on:click="addContact">Save</button>
 		</div>
 
 		<hr class="mt-1 mb-3 ml-5 mr-5" />
 
-		
+		<ul class="text-center">
+			<li 
+				is="contactLine"
+				v-bind:name="contact.name"
+				v-bind:phone-number="contact.phoneNumber"
+				v-bind:id="contact.id"
+				v-for="contact in contacts"	>				
+			</li>
+		</ul>
 	</div>
 
 

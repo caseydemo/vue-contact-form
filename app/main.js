@@ -1,3 +1,10 @@
+Vue.component( 'contactLine', {
+	template : '<li>{{ name }} {{ phoneNumber }}</li>',
+
+	props : [ 'id', 'name', 'phoneNumber' ]
+});
+
+
 var contactList = new Vue( {
 
 	el : '#contactList',
@@ -21,11 +28,25 @@ var contactList = new Vue( {
 				name : 'Severus Snape',
 				phoneNumber : '502-444-1010'
 			},
-		]
+		],
+		nextContactId : 4
 	},
 
 	methods : {
-
+		addContact : addContact
 	}
 
 });
+
+function addContact() {
+	this.contacts.push(
+		{
+			id : this.nextContactId++,
+			name : this.newName,
+			phoneNumber : this.newPhoneNumber
+		}
+	);
+
+	this.newName = '';
+	this.newPhoneNumber = '';
+}

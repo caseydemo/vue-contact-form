@@ -6,3 +6,7 @@
 #contactListTitleUnderline {
 	size: 5px;
 }
+
+li {
+	list-style: none;
+}

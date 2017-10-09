@@ -20,10 +20,15 @@ We need to make a contact list so we don't forget any of our contacts we met in 
 8. Make it robust enough to handle addition of fields like email.
 9. Delete a contact
 
-## Revisit
+## Stretch Goals
 
 1. Better styling
-2. Phone validation
+2. Phone validation*
+3. Phone invalid style and coloration
+4. Name validation
+5. Name invalid style and coloration
+6. Display as a table
+7. Add email
 
 
 

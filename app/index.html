@@ -36,9 +36,10 @@
 		  <div class="col-10">
 		    <input id="phoneNumberInput"
 		    			 class="form-control" 
-		           type="tel" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}" 
+		           type="tel" pattern="^[0-9\-\+\s\(\)]*$" required		           
 		           placeholder="Phone Number"
-		           v-model="newPhoneNumber" >
+		           v-model="newPhoneNumber" 
+		           v-on:blur="validatePhoneNumber">
 		  </div>
 		</div>
 

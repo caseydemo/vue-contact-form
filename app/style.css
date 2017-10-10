@@ -10,7 +10,10 @@
 li {
 	list-style: none;
 }
-li.row{
-	text-align: center;
-	padding: 10px;
+td{
+	font-weight: bolder;
+	padding:45px;
+	width: 25%;
+	height: 25px;
+	margin: auto;
 }
